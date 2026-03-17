@@ -1,0 +1,11 @@
+{
+  "name": "Intercom Import",
+  "slug": "escalated-plugin-import-intercom",
+  "version": "0.1.0",
+  "description": "Import conversations, contacts, and history from Intercom into Escalated.",
+  "author": "Escalated",
+  "main_file": "Plugin.php",
+  "requires": {
+    "escalated-laravel": ">=0.6.0"
+  }
+}

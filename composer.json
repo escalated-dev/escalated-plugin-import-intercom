@@ -1,0 +1,15 @@
+{
+  "name": "escalated/plugin-import-intercom",
+  "description": "Intercom import adapter for Escalated",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Escalated\\Plugins\\ImportIntercom\\": "src/"
+    },
+    "files": ["Plugin.php"]
+  }
+}
