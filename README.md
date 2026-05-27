@@ -1,5 +1,7 @@
 # Escalated Plugin: Import Intercom
 
+**Website:** [escalated.dev](https://escalated.dev)
+
 Imports conversations, contacts, admins (agents), teams (departments), and tags from Intercom into Escalated. Includes proactive rate-limit management to stay within Intercom's 1,000 requests per minute limit.
 
 ## Features
