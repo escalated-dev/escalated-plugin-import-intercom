@@ -42,4 +42,4 @@ npm install @escalated-dev/plugin-import-intercom
 
 ## License
 
-MIT
+MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
