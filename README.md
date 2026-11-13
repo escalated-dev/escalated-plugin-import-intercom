@@ -1,45 +1,68 @@
-# Escalated Plugin: Import Intercom
+<p align="center">
+  <a href="https://escalated.dev"><img src="https://raw.githubusercontent.com/escalated-dev/escalated/main/docs/assets/readme/logo.png" width="56" height="56" alt="Escalated"></a>
+</p>
 
-[![Views](https://hits.sh/github.com/escalated-dev/escalated-plugin-import-intercom.svg?style=flat&label=views&color=007ec6)](https://hits.sh/github.com/escalated-dev/escalated-plugin-import-intercom/)
+<h1 align="center">Intercom import for Escalated</h1>
 
-**Website:** [escalated.dev](https://escalated.dev)
+<p align="center">Move your Intercom conversations into Escalated, history included.</p>
 
-Imports conversations, contacts, admins (agents), teams (departments), and tags from Intercom into Escalated. Includes proactive rate-limit management to stay within Intercom's 1,000 requests per minute limit.
+<p align="center">
+  <a href="https://escalated.dev"><b>Website</b></a> ·
+  <a href="https://escalated.dev/docs"><b>Docs</b></a> ·
+  <a href="https://escalated.dev/cloud"><b>Cloud</b></a> ·
+  <a href="https://github.com/escalated-dev/escalated-plugin-import-intercom/releases"><b>Releases</b></a>
+</p>
+
+This plugin imports conversations, contacts, admins, teams and tags from Intercom into Escalated for Laravel, pacing its requests to stay inside Intercom's rate limit. It's for teams switching from Intercom who want to keep their conversation history.
 
 ## Features
 
-- Imports admins (agents), teams (departments), tags, and contacts
-- Imports conversations (tickets) with full state and priority mapping
-- Imports conversation parts (replies and internal notes)
-- Contacts fetched via Intercom's unified API v2 with POST search and cursor-based pagination
-- Proactive rate-limit management distributing requests across 10-second windows
-- Automatic back-off on 429 responses with `Retry-After` header support
-- Cursor-based pagination throughout for resumable imports
-- Maps Intercom states (open, closed, snoozed) to Escalated statuses
-- Maps Intercom priority levels to Escalated equivalents
-- Conversation title falls back to a plain-text excerpt of the first message body when absent
+<table>
+<tr>
+<td width="33%" valign="top">
 
-## Configuration
+**What it imports**
+- Admins, teams, tags and contacts
+- Conversations with state and priority mapping
+- Conversation parts: replies and internal notes
+- Untitled conversations titled from the first message
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `token` | password | Yes | Access token from Intercom Developer Hub > Your Apps > Authentication. |
+</td>
+<td width="33%" valign="top">
 
-## Hooks
+**Rate limits**
+- Requests spread across 10-second windows
+- Backs off on 429, honours Retry-After
 
-### Filters
-- `import.adapters` — Registers the Intercom import adapter with the Escalated import system.
+</td>
+<td width="33%" valign="top">
 
-## Entity Import Order
+**Pagination and mapping**
+- Contacts via API v2 search with cursors
+- Resumable imports with cursor pagination
+- States mapped: open, closed, snoozed
+- Priority levels mapped
 
-`agents` > `tags` > `departments` > `contacts` > `tickets` > `replies` > `attachments`
+</td>
+</tr>
+</table>
 
-## Installation
+<p align="center"><sub><a href="docs/features.md">Every feature in detail</a></sub></p>
 
-```bash
-npm install @escalated-dev/plugin-import-intercom
-```
+<p align="center">
+  <a href="https://www.php.net"><img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+  <a href="https://laravel.com"><img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel"></a>
+  <a href="https://getcomposer.org"><img src="https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer"></a>
+</p>
+
+## Learn more
+
+- [Every feature](docs/features.md)
+- [Configuration, hooks and import order](docs/reference.md)
+- [Plugin SDK](https://github.com/escalated-dev/escalated-plugin-sdk): how Escalated plugins are built
+- [Escalated docs](https://escalated.dev/docs)
+- [Escalated](https://github.com/escalated-dev/escalated), the main repo
 
 ## License
 
-MIT - Copyright (c) Escalated.dev. See [LICENSE](LICENSE).
+MIT. Copyright (c) 2026 Escalated.dev. See [LICENSE](LICENSE).
